@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guest Link Generator — Aseem & Anjali</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; padding: 28px 16px 40px;
+      font-family: 'Jost', sans-serif; color: #3A352B;
+      background: linear-gradient(175deg, #EDE5D4 0%, #E2D6C0 45%, #D6C8AE 100%);
+    }
+    .wrap { max-width: 520px; margin: 0 auto; }
+    h1 {
+      font-family: 'Tiro Devanagari Hindi', serif; font-size: 22px; font-weight: 400;
+      color: #8B3A12; text-align: center; margin: 0 0 6px; letter-spacing: .06em;
+    }
+    .sub { text-align: center; font-size: 13px; color: #8A7C62; margin-bottom: 24px; }
+    .card {
+      background: linear-gradient(180deg, #FEFCF8 0%, #FAF6EE 100%);
+      border: 1px solid rgba(184,149,63,.35);
+      box-shadow: 0 12px 32px rgba(72,54,28,.1), inset 0 0 0 4px #FEFCF8;
+      border-radius: 14px; padding: 22px 20px; margin-bottom: 16px;
+    }
+    label {
+      display: block; font-size: 12px; font-weight: 500; color: #8A7C62;
+      letter-spacing: .06em; margin-bottom: 6px; text-transform: uppercase;
+    }
+    input, textarea {
+      width: 100%; padding: 11px 14px; border-radius: 10px;
+      border: 1px solid rgba(170,140,80,.35);
+      background: rgba(255,255,255,.7); font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 16px; color: #3A352B; outline: none;
+    }
+    input:focus, textarea:focus { border-color: rgba(201,164,81,.65); box-shadow: 0 0 0 3px rgba(201,164,81,.12); }
+    textarea { min-height: 120px; resize: vertical; line-height: 1.5; }
+    .field { margin-bottom: 16px; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .row .field { flex: 1; min-width: 140px; }
+    button, .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(170,140,80,.4);
+      background: linear-gradient(160deg, #FDFAF2, #F3E8D0); color: #8B3A12;
+      font-family: 'Tiro Devanagari Hindi', serif; font-size: 14px; cursor: pointer;
+      box-shadow: 0 4px 12px rgba(150,120,55,.12);
+    }
+    button.primary {
+      background: linear-gradient(160deg, #C9A451, #9A7C40 68%, #86692E);
+      color: #FCF8F0; border-color: transparent;
+    }
+    button:active { transform: scale(.98); }
+    .out {
+      margin-top: 14px; padding: 12px 14px; border-radius: 10px;
+      background: rgba(255,252,245,.8); border: 1px dashed rgba(184,149,63,.35);
+      word-break: break-all; font-size: 13px; line-height: 1.55; color: #6E6555;
+    }
+    .out a { color: #8B3A12; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .hint { font-size: 12px; color: #9A8A72; line-height: 1.55; margin-top: 10px; }
+    .ok { color: #7A5F2E; font-size: 13px; margin-top: 8px; min-height: 18px; }
+    hr { border: none; border-top: 1px solid rgba(170,140,80,.2); margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>निमन्त्रणा लिङ्क बनाउनुहोस्</h1>
+    <p class="sub">Aseem & Anjali · Guest links (private — do not share this page)</p>
+
+    <div class="card">
+      <div class="field">
+        <label for="baseUrl">Invitation base URL</label>
+        <input id="baseUrl" type="url" placeholder="https://your-site.netlify.app/">
+      </div>
+      <div class="field">
+        <label for="guestName">Guest name</label>
+        <input id="guestName" type="text" placeholder="राम श्रेष्ठ / Sunita Gurung & family">
+      </div>
+      <div class="actions">
+        <button type="button" class="primary" id="makeLink">Generate link</button>
+        <button type="button" id="copyLink">Copy link</button>
+        <button type="button" id="previewLink">Preview</button>
+      </div>
+      <div class="out" id="linkOut">Link will appear here…</div>
+      <div class="ok" id="msg"></div>
+    </div>
+
+    <div class="card">
+      <h2 style="font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:#8B3A12;margin:0 0 14px;font-weight:400;">Bulk · many guests</h2>
+      <div class="field">
+        <label for="nameList">One name per line</label>
+        <textarea id="nameList" placeholder="राम श्रेष्ठ&#10;सunita गुरुङ्ग&#10;Mr. Sharma & family"></textarea>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label>Link style</label>
+          <select id="linkStyle" style="width:100%;padding:11px 14px;border-radius:10px;border:1px solid rgba(170,140,80,.35);background:rgba(255,255,255,.7);font-size:14px;">
+            <option value="to">Name in URL (?to=…)</option>
+            <option value="g">Short token (?g=…)</option>
+          </select>
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" class="primary" id="bulkCsv">Download CSV</button>
+        <button type="button" id="bulkGuests">Download guests.json</button>
+      </div>
+      <p class="hint">For <strong>?g=</strong> tokens: upload <code>guests.json</code> to your site folder, then deploy again.</p>
+    </div>
+  </div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const baseInput = $('baseUrl');
+    const nameInput = $('guestName');
+    const linkOut = $('linkOut');
+    const msg = $('msg');
+
+    baseInput.value = location.origin + location.pathname.replace(/generate\.html.*$/, '') + (location.pathname.includes('index') ? '' : 'index.html');
+
+    function baseUrl() {
+      let u = (baseInput.value || '').trim();
+      if (!u) u = location.origin + '/index.html';
+      if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+      return u.replace(/\?.*$/, '').replace(/#.*$/, '');
+    }
+
+    function linkForName(name, useToken) {
+      const base = baseUrl();
+      if (useToken) {
+        const token = randomToken();
+        return { url: base + '?g=' + encodeURIComponent(token), token, name };
+      }
+      return { url: base + '?to=' + encodeURIComponent(name.trim()), name };
+    }
+
+    function randomToken() {
+      const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+      let s = '';
+      for (let i = 0; i < 6; i++) s += chars[Math.floor(Math.random() * chars.length)];
+      return s;
+    }
+
+    function showLink(url) {
+      linkOut.innerHTML = '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
+      linkOut.dataset.url = url;
+    }
+
+    $('makeLink').onclick = () => {
+      const name = nameInput.value.trim();
+      if (!name) { msg.textContent = 'Please enter a guest name.'; return; }
+      const { url } = linkForName(name, false);
+      showLink(url);
+      msg.textContent = 'Ready — copy or preview.';
+    };
+
+    $('copyLink').onclick = async () => {
+      const url = linkOut.dataset.url;
+      if (!url) { msg.textContent = 'Generate a link first.'; return; }
+      try {
+        await navigator.clipboard.writeText(url);
+        msg.textContent = 'Copied to clipboard.';
+      } catch (_) {
+        msg.textContent = 'Copy failed — select the link manually.';
+      }
+    };
+
+    $('previewLink').onclick = () => {
+      const url = linkOut.dataset.url;
+      if (!url) { msg.textContent = 'Generate a link first.'; return; }
+      window.open(url, '_blank');
+    };
+
+    $('bulkCsv').onclick = () => {
+      const names = $('nameList').value.split(/\n/).map((n) => n.trim()).filter(Boolean);
+      if (!names.length) { msg.textContent = 'Add at least one name.'; return; }
+      const useToken = $('linkStyle').value === 'g';
+      const rows = [['Name', 'Link', 'Token'].filter((_, i) => useToken || i < 2)];
+      names.forEach((name) => {
+        const r = linkForName(name, useToken);
+        rows.push(useToken ? [name, r.url, r.token] : [name, r.url]);
+      });
+      downloadText(rows.map((r) => r.map(csvCell).join(',')).join('\n'), 'invitation-links.csv', 'text/csv');
+      msg.textContent = 'Downloaded CSV with ' + names.length + ' links.';
+    };
+
+    $('bulkGuests').onclick = () => {
+      const names = $('nameList').value.split(/\n/).map((n) => n.trim()).filter(Boolean);
+      if (!names.length) { msg.textContent = 'Add at least one name.'; return; }
+      const map = {};
+      names.forEach((name) => { map[randomToken()] = name; });
+      downloadText(JSON.stringify(map, null, 2), 'guests.json', 'application/json');
+      msg.textContent = 'Downloaded guests.json — replace the file on your site and redeploy.';
+    };
+
+    function csvCell(v) {
+      const s = String(v);
+      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    }
+
+    function downloadText(text, filename, type) {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([text], { type }));
+      a.download = filename;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Drag-and-drop this folder at https://app.netlify.com/drop
+# Or connect the folder to Netlify for a permanent URL.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
