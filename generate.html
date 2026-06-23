@@ -63,6 +63,123 @@
     .hint { font-size: 12px; color: #9A8A72; line-height: 1.55; margin-top: 10px; }
     .ok { color: #7A5F2E; font-size: 13px; margin-top: 8px; min-height: 18px; }
     hr { border: none; border-top: 1px solid rgba(170,140,80,.2); margin: 20px 0; }
+    .bulk-results {
+      display: none; margin-top: 14px; border-radius: 10px;
+      border: 1px solid rgba(184,149,63,.28); background: rgba(255,252,245,.85);
+      overflow: hidden;
+    }
+    .bulk-results.show { display: block; }
+    .bulk-results-head {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      padding: 10px 12px; background: rgba(243,232,208,.55);
+      border-bottom: 1px solid rgba(170,140,80,.18);
+      font-size: 12px; color: #8A7C62;
+    }
+    .bulk-list { max-height: 280px; overflow: auto; }
+    .bulk-item {
+      display: flex; align-items: flex-start; gap: 8px;
+      padding: 10px 12px; border-bottom: 1px solid rgba(170,140,80,.12);
+    }
+    .bulk-item:last-child { border-bottom: none; }
+    .bulk-item-main { flex: 1; min-width: 0; }
+    .bulk-item-name {
+      font-family: 'Tiro Devanagari Hindi', serif; font-size: 15px; color: #3A352B;
+      margin-bottom: 3px;
+    }
+    .bulk-item-url {
+      font-size: 11px; line-height: 1.45; color: #8A7C62; word-break: break-all;
+    }
+    .bulk-item-url a { color: #8B3A12; text-decoration: none; }
+    button.copy-one {
+      flex-shrink: 0; padding: 7px 12px; font-size: 12px;
+    }
+    .bulk-text {
+      width: 100%; min-height: 140px; margin-top: 12px; padding: 11px 14px;
+      border-radius: 10px; border: 1px solid rgba(170,140,80,.35);
+      background: rgba(255,255,255,.75); font-size: 12px; line-height: 1.55;
+      color: #3A352B; resize: vertical; font-family: 'Jost', sans-serif;
+    }
+    .secondary-actions { margin-top: 10px; }
+    .secondary-actions button { font-size: 12px; padding: 8px 14px; opacity: .92; }
+    .family-names li.empty {
+      font-size: 12px; color: #9A8A72; font-style: italic;
+    }
+    .family-caption-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      margin-top: 10px; padding-bottom: 2px;
+    }
+    .family-caption-wrap--above {
+      margin-top: 0; margin-bottom: 12px; padding-bottom: 0;
+    }
+    .family-caption-rule {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      width: 100%; opacity: .78;
+    }
+    .family-caption-rule::before, .family-caption-rule::after {
+      content: ''; flex: 1; max-width: 80px; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,164,81,.55));
+    }
+    .family-caption-rule::after {
+      background: linear-gradient(90deg, rgba(201,164,81,.55), transparent);
+    }
+    .family-caption-rule span {
+      width: 6px; height: 6px; flex-shrink: 0; transform: rotate(45deg);
+      background: linear-gradient(160deg, #E8C872, #C9A451);
+      box-shadow: 0 0 0 2px rgba(201,164,81,.2);
+    }
+    .family-caption {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 7px 20px; border-radius: 999px;
+      font-family: 'Tiro Devanagari Hindi', serif; font-size: 14px; color: #8B3A12;
+      letter-spacing: .1em;
+      background: linear-gradient(160deg, rgba(255,252,245,.95), rgba(245,235,212,.7));
+      border: 1px solid rgba(198,162,78,.48);
+      box-shadow: 0 4px 14px rgba(150,120,55,.14), inset 0 1px 0 rgba(255,255,255,.92);
+    }
+    .family-name-multiline {
+      text-align: center; line-height: 1.6;
+    }
+    .family-name-multiline .family-name-line {
+      display: block;
+    }
+    .family-name-multiline .family-name-line + .family-name-line {
+      margin-top: 4px;
+    }
+    .family-lead-panel {
+      position: relative; padding: 18px 14px 14px; margin-bottom: 4px;
+      border-radius: 14px; text-align: center;
+      background: linear-gradient(165deg, #FFF9EE 0%, #F8EBCF 48%, #F0DFB8 100%);
+      border: 1px solid rgba(198,162,78,.55);
+      box-shadow: 0 8px 20px rgba(150,110,50,.12), inset 0 1px 0 rgba(255,255,255,.9);
+    }
+    .family-lead-panel::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, #C9A451, #E8C872, #C9A451, transparent);
+    }
+    .family-name-line--emph { font-size: 15px; color: #5C3210; }
+    .family-name-line--family { font-size: 15px; color: #3A352B; }
+    .family-name-line--address { font-size: 13px; color: #7A5F2E; margin-top: 8px; }
+    .family-card h2 {
+      font-family: 'Tiro Devanagari Hindi', serif; font-size: 17px; color: #8B3A12;
+      margin: 0 0 4px; font-weight: 400;
+    }
+    .family-card .sub-list { margin-bottom: 14px; }
+    .family-section { margin-bottom: 14px; }
+    .family-section-label {
+      font-family: 'Tiro Devanagari Hindi', serif; font-size: 13px; color: #9A7C40;
+      margin-bottom: 6px; letter-spacing: .03em;
+    }
+    .family-names {
+      list-style: none; margin: 0; padding: 0;
+      border: 1px solid rgba(184,149,63,.22); border-radius: 10px;
+      background: rgba(255,252,245,.7); overflow: hidden;
+    }
+    .family-names li {
+      padding: 9px 12px; font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 14px; color: #3A352B; line-height: 1.45;
+      border-bottom: 1px solid rgba(170,140,80,.1);
+    }
+    .family-names li:last-child { border-bottom: none; }
   </style>
 </head>
 <body>
@@ -88,6 +205,17 @@
       <div class="ok" id="msg"></div>
     </div>
 
+    <div class="card family-card">
+      <h2 id="groomFamilyTitle">वर पक्ष · Groom family list</h2>
+      <p class="sub-list" id="groomFamilyCount">Loading…</p>
+      <div id="groomFamilySections"></div>
+      <div class="actions">
+        <button type="button" class="primary" id="loadGroomFamily">Load into bulk names</button>
+        <button type="button" id="generateGroomFamily">Generate all groom links</button>
+      </div>
+      <div class="ok" id="groomFamilyMsg"></div>
+    </div>
+
     <div class="card">
       <h2 style="font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:#8B3A12;margin:0 0 14px;font-weight:400;">Bulk · many guests</h2>
       <div class="field">
@@ -98,16 +226,36 @@
         <div class="field">
           <label>Link style</label>
           <select id="linkStyle" style="width:100%;padding:11px 14px;border-radius:10px;border:1px solid rgba(170,140,80,.35);background:rgba(255,255,255,.7);font-size:14px;">
-            <option value="to">Name in URL (?to=…)</option>
-            <option value="g">Short token (?g=…)</option>
+            <option value="to">Simple — name in link (?to=…) · recommended</option>
+            <option value="g">Short token (?g=…) · needs guests.json upload</option>
           </select>
         </div>
       </div>
       <div class="actions">
-        <button type="button" class="primary" id="bulkCsv">Download CSV</button>
-        <button type="button" id="bulkGuests">Download guests.json</button>
+        <button type="button" class="primary" id="bulkGenerate">Generate all links</button>
+        <button type="button" id="bulkCopy">Copy all</button>
+        <button type="button" id="bulkWhatsApp">Copy for WhatsApp</button>
       </div>
-      <p class="hint">For <strong>?g=</strong> tokens: upload <code>guests.json</code> to your site folder, then deploy again.</p>
+      <div class="ok" id="bulkMsg"></div>
+
+      <div class="bulk-results" id="bulkResults">
+        <div class="bulk-results-head">
+          <span id="bulkCount">0 links</span>
+          <button type="button" class="copy-one" id="bulkSelectAll">Select all text</button>
+        </div>
+        <div class="bulk-list" id="bulkList"></div>
+        <textarea class="bulk-text" id="bulkText" readonly placeholder="All links appear here — tap Select all text, then copy."></textarea>
+      </div>
+
+      <details class="secondary-actions">
+        <summary style="cursor:pointer;font-size:12px;color:#9A8A72;margin-top:12px;">Download files (optional)</summary>
+        <div class="actions" style="margin-top:10px;">
+          <button type="button" id="bulkCsv">Download CSV</button>
+          <button type="button" id="bulkGuests">Download guests.json</button>
+        </div>
+      </details>
+
+      <p class="hint"><strong>Simplest way:</strong> paste names → Generate all links → Copy for WhatsApp → send each guest their link. No file download needed.</p>
     </div>
   </div>
 
@@ -117,36 +265,179 @@
     const nameInput = $('guestName');
     const linkOut = $('linkOut');
     const msg = $('msg');
+    const bulkMsg = $('bulkMsg');
+    const bulkResults = $('bulkResults');
+    const bulkList = $('bulkList');
+    const bulkText = $('bulkText');
+    const bulkCount = $('bulkCount');
+    let lastBulk = null;
+    let groomFamilyData = null;
 
-    baseInput.value = location.origin + location.pathname.replace(/generate\.html.*$/, '') + (location.pathname.includes('index') ? '' : 'index.html');
+    const GROOM_FAMILY_FALLBACK = {
+      title: "प्रार्थी",
+      darshanabhilashiLabel: "दर्शनाभिलाषि",
+      parentsLines: [
+        "टेक नारायण सुबेदी ( बुवा)",
+        "गीता कुमारी शर्मा (आमा)",
+        "अस्मी सुबेदी ( बहिनी )",
+        "एवम समस्त सुबेदी परिवार",
+        "कुश्मा–०८,पर्वत"
+      ],
+      sections: [
+        { label: "बुवा / आमाहरू", names: ["श्रीमान / श्रीमती नीलकण्ठ सुबेदी / विष्णुमती सुबेदी", "श्रीमान / श्रीमती कृष्णप्रसाद सुबेदी / शान्ता सुबेदी", "श्रीमान / श्रीमती दिवाकर सुबेदी / पार्वती सुबेदी", "श्रीमती राधिका सुबेदी", "श्रीमान / श्रीमती राजु सुबेदी / दुर्गा सुबेदी"] },
+        { label: "फुपू / पुसजुहरु", caption: "स्वागतपेक्षी", names: ["सीता देवी पाध्या", "गङ्गा देवी पाध्या", "श्रीमान / श्रीमती मनोहरी पाध्या / रेवति पाध्यानी", "श्रीमान / श्रीमती ईमनाथ गौतम / विष्णुकुमारी गौतम"] },
+        { label: "दिदी / भिनाजु / बहिनी / ज्वाइँहरू", names: ["श्रीमान / श्रीमती जया अर्याल / रमेश अर्याल", "श्रीमान / श्रीमती प्रमिला पौडेल / गोविन्दप्रसाद पौडेल", "श्रीमान / श्रीमती राधा पौडेल / रामकृष्ण पौडेल", "श्रीमान / श्रीमती शर्मिला शर्मा / सन्तोष शर्मा", "श्रीमान / श्रीमती सबिना आचार्य / राजन आचार्य", "श्रीमान / श्रीमती सुस्मिता अर्याल / जगदीश अर्याल"] },
+        { label: "दाइ / भाउजू / भाइहरू", names: ["श्रीमान / श्रीमती नेत्र सुबेदी / अम्बिका सुबेदी", "श्रीमान / श्रीमती दिनेश सुबेदी / पूजा सुबेदी", "राजन सुबेदी", "मुक्ति सुबेदी", "राजीव सुबेदी", "सुदीप सुबेदी", "मिलन सुबेदी"] },
+        { label: "भतिज / भतिजी", names: ["अंकित सुबेदी", "अमन सुबेदी", "प्रसिद्ध सुबेदी", "प्रसिद्धि सुबेदी"] },
+        { label: "मावली तर्फ", decoratedLabel: true, names: ["विष्णुमती उपाध्यायनी · हजुरआमा", "श्रीमान / श्रीमती बालकृष्ण पौडेल / देवी पौडेल ( मामा / माइजू )"] }
+      ],
+    };
+
+    function getParentsLines(data) {
+      if (Array.isArray(data.parentsLines) && data.parentsLines.length) return data.parentsLines;
+      if (data.parents) return [data.parents];
+      return [];
+    }
+
+    function groomFamilyNames(data) {
+      const lines = getParentsLines(data);
+      const names = lines.length ? [lines.join(' · ')] : [];
+      (data.sections || []).forEach((s) => names.push(...(s.names || []).filter(Boolean)));
+      return names;
+    }
+
+    function renderFamilyCaption(label, above) {
+      const cls = above ? ' family-caption-wrap--above' : '';
+      return '<div class="family-caption-wrap' + cls + '"><div class="family-caption-rule" aria-hidden="true"><span></span></div><div class="family-caption">' + escapeHtml(label) + '</div></div>';
+    }
+
+    function renderParentsBlock(lines) {
+      const lineClasses = ['family-name-line--emph', 'family-name-line--emph', 'family-name-line--emph', 'family-name-line--family', 'family-name-line--address'];
+      const inner = lines.map((l, i) => '<span class="family-name-line ' + (lineClasses[i] || '') + '">' + escapeHtml(l) + '</span>').join('');
+      return '<div class="family-lead-panel"><div class="family-name-multiline">' + inner + '</div></div>';
+    }
+
+    function renderGroomFamily(data) {
+      groomFamilyData = data;
+      $('groomFamilyTitle').textContent = data.title || 'वर पक्ष · Groom family list';
+      const names = groomFamilyNames(data);
+      $('groomFamilyCount').textContent = names.length + ' guests in groom family list';
+      let html = '';
+      const parentsLines = getParentsLines(data);
+      if (parentsLines.length) {
+        const dLabel = data.darshanabhilashiLabel || 'दर्शनाभिलाषि';
+        html += '<div class="family-section">' + renderParentsBlock(parentsLines) + renderFamilyCaption(dLabel) + '</div>';
+      }
+      html += (data.sections || [])
+        .filter((sec) => (sec.names || []).length)
+        .map((sec) => {
+          const items = sec.names.map((n) => '<li>' + escapeHtml(n) + '</li>').join('');
+          const caption = sec.caption ? renderFamilyCaption(sec.caption, true) : '';
+          const labelHtml = sec.decoratedLabel
+            ? renderFamilyCaption(sec.label, true)
+            : '<div class="family-section-label">' + escapeHtml(sec.label) + '</div>';
+          return '<div class="family-section">' + caption + labelHtml + '<ul class="family-names">' + items + '</ul></div>';
+        }).join('');
+      $('groomFamilySections').innerHTML = html;
+    }
+
+    async function loadGroomFamilyFile() {
+      try {
+        const res = await fetch('./groom-family.json');
+        if (res.ok) renderGroomFamily(await res.json());
+        else renderGroomFamily(GROOM_FAMILY_FALLBACK);
+      } catch (_) {
+        renderGroomFamily(GROOM_FAMILY_FALLBACK);
+      }
+    }
+
+    $('loadGroomFamily').onclick = () => {
+      if (!groomFamilyData) { $('groomFamilyMsg').textContent = 'Family list not loaded yet.'; return; }
+      const names = groomFamilyNames(groomFamilyData);
+      if (!names.length) { $('groomFamilyMsg').textContent = 'No names in groom family list.'; return; }
+      $('nameList').value = names.join('\n');
+      $('groomFamilyMsg').textContent = 'Loaded ' + names.length + ' names into bulk — click Generate all links.';
+      $('nameList').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    $('generateGroomFamily').onclick = () => {
+      if (!groomFamilyData) return;
+      const names = groomFamilyNames(groomFamilyData);
+      if (!names.length) { $('groomFamilyMsg').textContent = 'No names in groom family list.'; return; }
+      $('nameList').value = names.join('\n');
+      const data = runBulk();
+      if (!data) return;
+      renderBulkResults(data);
+      $('groomFamilyMsg').textContent = 'Generated ' + data.rows.length + ' groom family links.';
+      bulkResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+
+    loadGroomFamilyFile();
+
+    function defaultBaseUrl() {
+      const dir = location.pathname.replace(/[^/]*$/, '');
+      return location.origin + dir + 'index.html';
+    }
+
+    baseInput.value = defaultBaseUrl();
 
     function baseUrl() {
       let u = (baseInput.value || '').trim();
-      if (!u) u = location.origin + '/index.html';
+      if (!u) u = defaultBaseUrl();
       if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
       return u.replace(/\?.*$/, '').replace(/#.*$/, '');
     }
 
-    function linkForName(name, useToken) {
-      const base = baseUrl();
-      if (useToken) {
-        const token = randomToken();
-        return { url: base + '?g=' + encodeURIComponent(token), token, name };
-      }
-      return { url: base + '?to=' + encodeURIComponent(name.trim()), name };
+    function parseNames(raw) {
+      return String(raw || '')
+        .split(/\r?\n/)
+        .map((line) => line.trim())
+        .filter(Boolean)
+        .flatMap((line) => {
+          if (/[,;]/.test(line)) {
+            return line.split(/[,;]+/).map((n) => n.trim()).filter(Boolean);
+          }
+          return [line.replace(/\t+/g, ' ').trim()];
+        })
+        .filter(Boolean);
     }
 
-    function randomToken() {
+    function uniqueToken(used) {
       const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-      let s = '';
-      for (let i = 0; i < 6; i++) s += chars[Math.floor(Math.random() * chars.length)];
-      return s;
+      let token = '';
+      do {
+        token = '';
+        for (let i = 0; i < 6; i++) token += chars[Math.floor(Math.random() * chars.length)];
+      } while (used.has(token));
+      used.add(token);
+      return token;
+    }
+
+    function buildBulkRows(names, useToken) {
+      const base = baseUrl();
+      const used = new Set();
+      const guestMap = {};
+      const rows = names.map((name) => {
+        if (useToken) {
+          const token = uniqueToken(used);
+          guestMap[token] = name;
+          return { name, token, url: base + '?g=' + encodeURIComponent(token) };
+        }
+        return { name, url: base + '?to=' + encodeURIComponent(name) };
+      });
+      return { rows, guestMap };
+    }
+
+    function linkForName(name, useToken) {
+      const { rows } = buildBulkRows([name.trim()], useToken);
+      return rows[0];
     }
 
     function showLink(url) {
       linkOut.innerHTML = '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
       linkOut.dataset.url = url;
     }
+
 
     $('makeLink').onclick = () => {
       const name = nameInput.value.trim();
@@ -173,26 +464,145 @@
       window.open(url, '_blank');
     };
 
-    $('bulkCsv').onclick = () => {
-      const names = $('nameList').value.split(/\n/).map((n) => n.trim()).filter(Boolean);
-      if (!names.length) { msg.textContent = 'Add at least one name.'; return; }
+    function runBulk() {
+      const names = parseNames($('nameList').value);
+      if (!names.length) {
+        bulkMsg.textContent = 'Add at least one guest name.';
+        bulkResults.classList.remove('show');
+        lastBulk = null;
+        return null;
+      }
       const useToken = $('linkStyle').value === 'g';
-      const rows = [['Name', 'Link', 'Token'].filter((_, i) => useToken || i < 2)];
-      names.forEach((name) => {
-        const r = linkForName(name, useToken);
-        rows.push(useToken ? [name, r.url, r.token] : [name, r.url]);
+      const { rows, guestMap } = buildBulkRows(names, useToken);
+      lastBulk = { names, useToken, rows, guestMap };
+      return lastBulk;
+    }
+
+    function rowsAsPlainText(rows) {
+      return rows.map((r) => r.name + '\n' + r.url).join('\n\n');
+    }
+
+    function rowsAsWhatsApp(rows) {
+      return rows.map((r) =>
+        'नमस्ते ' + r.name + ',\n' +
+        'Aseem & Anjali को विवाह निमन्त्रणा:\n' +
+        r.url
+      ).join('\n\n---\n\n');
+    }
+
+    function renderBulkResults(data) {
+      bulkResults.classList.add('show');
+      bulkCount.textContent = data.rows.length + ' link' + (data.rows.length === 1 ? '' : 's');
+      bulkList.innerHTML = data.rows.map((r, i) =>
+        '<div class="bulk-item">' +
+          '<div class="bulk-item-main">' +
+            '<div class="bulk-item-name">' + escapeHtml(r.name) + '</div>' +
+            '<div class="bulk-item-url"><a href="' + escapeHtml(r.url) + '" target="_blank" rel="noopener">' + escapeHtml(r.url) + '</a></div>' +
+          '</div>' +
+          '<button type="button" class="copy-one" data-copy-index="' + i + '">Copy</button>' +
+        '</div>'
+      ).join('');
+      bulkText.value = rowsAsPlainText(data.rows);
+      bulkMsg.textContent = 'Ready — copy one link or use Copy for WhatsApp.';
+    }
+
+    async function copyText(text, okMsg) {
+      try {
+        await navigator.clipboard.writeText(text);
+        bulkMsg.textContent = okMsg;
+        return true;
+      } catch (_) {
+        bulkText.value = text;
+        bulkText.removeAttribute('readonly');
+        bulkText.focus();
+        bulkText.select();
+        bulkMsg.textContent = 'Tap Select all text below, then copy manually.';
+        return false;
+      }
+    }
+
+    $('bulkGenerate').onclick = () => {
+      const data = runBulk();
+      if (!data) return;
+      renderBulkResults(data);
+    };
+
+    bulkList.addEventListener('click', async (e) => {
+      const btn = e.target.closest('[data-copy-index]');
+      if (!btn || !lastBulk) return;
+      const row = lastBulk.rows[Number(btn.dataset.copyIndex)];
+      if (!row) return;
+      await copyText(row.url, 'Copied link for ' + row.name + '.');
+    });
+
+
+    $('bulkSelectAll').onclick = () => {
+      if (!lastBulk) { bulkMsg.textContent = 'Generate links first.'; return; }
+      bulkText.removeAttribute('readonly');
+      bulkText.focus();
+      bulkText.select();
+      bulkMsg.textContent = 'Text selected — press Copy on your phone or Cmd/Ctrl+C.';
+    };
+
+    $('bulkCopy').onclick = async () => {
+      let data = lastBulk;
+      if (!data) {
+        data = runBulk();
+        if (!data) return;
+        renderBulkResults(data);
+      }
+      await copyText(rowsAsPlainText(data.rows), 'Copied ' + data.rows.length + ' links.');
+    };
+
+    $('bulkWhatsApp').onclick = async () => {
+      let data = lastBulk;
+      if (!data) {
+        data = runBulk();
+        if (!data) return;
+        renderBulkResults(data);
+      }
+      await copyText(rowsAsWhatsApp(data.rows), 'Copied WhatsApp messages for ' + data.rows.length + ' guests.');
+    };
+
+    $('bulkCsv').onclick = () => {
+      let data = lastBulk;
+      if (!data) {
+        data = runBulk();
+        if (!data) return;
+        renderBulkResults(data);
+      }
+      const header = data.useToken ? ['Name', 'Link', 'Token'] : ['Name', 'Link'];
+      const lines = [header];
+      data.rows.forEach((r) => {
+        lines.push(data.useToken ? [r.name, r.url, r.token] : [r.name, r.url]);
       });
-      downloadText(rows.map((r) => r.map(csvCell).join(',')).join('\n'), 'invitation-links.csv', 'text/csv');
-      msg.textContent = 'Downloaded CSV with ' + names.length + ' links.';
+      const csv = '\uFEFF' + lines.map((r) => r.map(csvCell).join(',')).join('\r\n');
+      if (downloadText(csv, 'invitation-links.csv', 'text/csv;charset=utf-8')) {
+        bulkMsg.textContent = 'Downloaded CSV with ' + data.rows.length + ' links.';
+      } else {
+        bulkText.value = csv;
+        bulkMsg.textContent = 'Download blocked — copy from the text box below.';
+      }
     };
 
     $('bulkGuests').onclick = () => {
-      const names = $('nameList').value.split(/\n/).map((n) => n.trim()).filter(Boolean);
-      if (!names.length) { msg.textContent = 'Add at least one name.'; return; }
-      const map = {};
-      names.forEach((name) => { map[randomToken()] = name; });
-      downloadText(JSON.stringify(map, null, 2), 'guests.json', 'application/json');
-      msg.textContent = 'Downloaded guests.json — replace the file on your site and redeploy.';
+      let data = lastBulk;
+      if (!data) {
+        data = runBulk();
+        if (!data) return;
+        renderBulkResults(data);
+      }
+      if (!data.useToken) {
+        bulkMsg.textContent = 'Switch link style to Short token (?g=…) for guests.json.';
+        return;
+      }
+      const json = JSON.stringify(data.guestMap, null, 2);
+      if (downloadText(json, 'guests.json', 'application/json;charset=utf-8')) {
+        bulkMsg.textContent = 'Downloaded guests.json — upload to your site and redeploy.';
+      } else {
+        bulkText.value = json;
+        bulkMsg.textContent = 'Download blocked — copy JSON from the text box below.';
+      }
     };
 
     function csvCell(v) {
@@ -200,12 +610,30 @@
       return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
     }
 
+    function escapeHtml(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
     function downloadText(text, filename, type) {
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(new Blob([text], { type }));
-      a.download = filename;
-      a.click();
-      URL.revokeObjectURL(a.href);
+      try {
+        const blob = new Blob([text], { type });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 4000);
+        return true;
+      } catch (_) {
+        return false;
+      }
     }
   </script>
 </body>
