@@ -17,9 +17,8 @@
     .wrap { max-width: 520px; margin: 0 auto; }
     h1 {
       font-family: 'Tiro Devanagari Hindi', serif; font-size: 22px; font-weight: 400;
-      color: #8B3A12; text-align: center; margin: 0 0 6px; letter-spacing: .06em;
+      color: #8B3A12; text-align: center; margin: 0 0 24px; letter-spacing: .06em;
     }
-    .sub { text-align: center; font-size: 13px; color: #8A7C62; margin-bottom: 24px; }
     .card {
       background: linear-gradient(180deg, #FEFCF8 0%, #FAF6EE 100%);
       border: 1px solid rgba(184,149,63,.35);
@@ -101,123 +100,18 @@
     }
     .secondary-actions { margin-top: 10px; }
     .secondary-actions button { font-size: 12px; padding: 8px 14px; opacity: .92; }
-    .family-names li.empty {
-      font-size: 12px; color: #9A8A72; font-style: italic;
-    }
-    .family-caption-wrap {
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      margin-top: 10px; padding-bottom: 2px;
-    }
-    .family-caption-wrap--above {
-      margin-top: 0; margin-bottom: 12px; padding-bottom: 0;
-    }
-    .family-caption-rule {
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      width: 100%; opacity: .78;
-    }
-    .family-caption-rule::before, .family-caption-rule::after {
-      content: ''; flex: 1; max-width: 80px; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(201,164,81,.55));
-    }
-    .family-caption-rule::after {
-      background: linear-gradient(90deg, rgba(201,164,81,.55), transparent);
-    }
-    .family-caption-rule span {
-      width: 6px; height: 6px; flex-shrink: 0; transform: rotate(45deg);
-      background: linear-gradient(160deg, #E8C872, #C9A451);
-      box-shadow: 0 0 0 2px rgba(201,164,81,.2);
-    }
-    .family-caption {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 7px 20px; border-radius: 999px;
-      font-family: 'Tiro Devanagari Hindi', serif; font-size: 14px; color: #8B3A12;
-      letter-spacing: .1em;
-      background: linear-gradient(160deg, rgba(255,252,245,.95), rgba(245,235,212,.7));
-      border: 1px solid rgba(198,162,78,.48);
-      box-shadow: 0 4px 14px rgba(150,120,55,.14), inset 0 1px 0 rgba(255,255,255,.92);
-    }
-    .family-name-multiline {
-      text-align: center; line-height: 1.6;
-    }
-    .family-name-multiline .family-name-line {
-      display: block;
-    }
-    .family-name-multiline .family-name-line + .family-name-line {
-      margin-top: 4px;
-    }
-    .family-lead-panel {
-      position: relative; padding: 18px 14px 14px; margin-bottom: 4px;
-      border-radius: 14px; text-align: center;
-      background: linear-gradient(165deg, #FFF9EE 0%, #F8EBCF 48%, #F0DFB8 100%);
-      border: 1px solid rgba(198,162,78,.55);
-      box-shadow: 0 8px 20px rgba(150,110,50,.12), inset 0 1px 0 rgba(255,255,255,.9);
-    }
-    .family-lead-panel::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, transparent, #C9A451, #E8C872, #C9A451, transparent);
-    }
-    .family-name-line--emph { font-size: 15px; color: #5C3210; }
-    .family-name-line--family { font-size: 15px; color: #3A352B; }
-    .family-name-line--address { font-size: 13px; color: #7A5F2E; margin-top: 8px; }
-    .family-card h2 {
-      font-family: 'Tiro Devanagari Hindi', serif; font-size: 17px; color: #8B3A12;
-      margin: 0 0 4px; font-weight: 400;
-    }
-    .family-card .sub-list { margin-bottom: 14px; }
-    .family-section { margin-bottom: 14px; }
-    .family-section-label {
-      font-family: 'Tiro Devanagari Hindi', serif; font-size: 13px; color: #9A7C40;
-      margin-bottom: 6px; letter-spacing: .03em;
-    }
-    .family-names {
-      list-style: none; margin: 0; padding: 0;
-      border: 1px solid rgba(184,149,63,.22); border-radius: 10px;
-      background: rgba(255,252,245,.7); overflow: hidden;
-    }
-    .family-names li {
-      padding: 9px 12px; font-family: 'Tiro Devanagari Hindi', serif;
-      font-size: 14px; color: #3A352B; line-height: 1.45;
-      border-bottom: 1px solid rgba(170,140,80,.1);
-    }
-    .family-names li:last-child { border-bottom: none; }
   </style>
 </head>
 <body>
   <div class="wrap">
     <h1>निमन्त्रणा लिङ्क बनाउनुहोस्</h1>
-    <p class="sub">Aseem & Anjali · Guest links (private — do not share this page)</p>
 
     <div class="card">
+      <h2 style="font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:#8B3A12;margin:0 0 14px;font-weight:400;">Bulk · many guests</h2>
       <div class="field">
         <label for="baseUrl">Invitation base URL</label>
         <input id="baseUrl" type="url" placeholder="https://your-site.netlify.app/">
       </div>
-      <div class="field">
-        <label for="guestName">Guest name</label>
-        <input id="guestName" type="text" placeholder="राम श्रेष्ठ / Sunita Gurung & family">
-      </div>
-      <div class="actions">
-        <button type="button" class="primary" id="makeLink">Generate link</button>
-        <button type="button" id="copyLink">Copy link</button>
-        <button type="button" id="previewLink">Preview</button>
-      </div>
-      <div class="out" id="linkOut">Link will appear here…</div>
-      <div class="ok" id="msg"></div>
-    </div>
-
-    <div class="card family-card">
-      <h2 id="groomFamilyTitle">वर पक्ष · Groom family list</h2>
-      <p class="sub-list" id="groomFamilyCount">Loading…</p>
-      <div id="groomFamilySections"></div>
-      <div class="actions">
-        <button type="button" class="primary" id="loadGroomFamily">Load into bulk names</button>
-        <button type="button" id="generateGroomFamily">Generate all groom links</button>
-      </div>
-      <div class="ok" id="groomFamilyMsg"></div>
-    </div>
-
-    <div class="card">
-      <h2 style="font-family:'Tiro Devanagari Hindi',serif;font-size:17px;color:#8B3A12;margin:0 0 14px;font-weight:400;">Bulk · many guests</h2>
       <div class="field">
         <label for="nameList">One name per line</label>
         <textarea id="nameList" placeholder="राम श्रेष्ठ&#10;सunita गुरुङ्ग&#10;Mr. Sharma & family"></textarea>
@@ -262,117 +156,12 @@
   <script>
     const $ = (id) => document.getElementById(id);
     const baseInput = $('baseUrl');
-    const nameInput = $('guestName');
-    const linkOut = $('linkOut');
-    const msg = $('msg');
     const bulkMsg = $('bulkMsg');
     const bulkResults = $('bulkResults');
     const bulkList = $('bulkList');
     const bulkText = $('bulkText');
     const bulkCount = $('bulkCount');
     let lastBulk = null;
-    let groomFamilyData = null;
-
-    const GROOM_FAMILY_FALLBACK = {
-      title: "प्रार्थी",
-      darshanabhilashiLabel: "दर्शनाभिलाषि",
-      parentsLines: [
-        "टेक नारायण सुबेदी ( बुवा)",
-        "गीता कुमारी शर्मा (आमा)",
-        "अस्मी सुबेदी ( बहिनी )",
-        "एवम समस्त सुबेदी परिवार",
-        "कुश्मा–०८,पर्वत"
-      ],
-      sections: [
-        { label: "बुवा / आमाहरू", names: ["श्रीमान / श्रीमती नीलकण्ठ सुबेदी / विष्णुमती सुबेदी", "श्रीमान / श्रीमती कृष्णप्रसाद सुबेदी / शान्ता सुबेदी", "श्रीमान / श्रीमती दिवाकर सुबेदी / पार्वती सुबेदी", "श्रीमती राधिका सुबेदी", "श्रीमान / श्रीमती राजु सुबेदी / दुर्गा सुबेदी"] },
-        { label: "फुपू / पुसजुहरु", caption: "स्वागतपेक्षी", names: ["सीता देवी पाध्या", "गङ्गा देवी पाध्या", "श्रीमान / श्रीमती मनोहरी पाध्या / रेवति पाध्यानी", "श्रीमान / श्रीमती ईमनाथ गौतम / विष्णुकुमारी गौतम"] },
-        { label: "दिदी / भिनाजु / बहिनी / ज्वाइँहरू", names: ["श्रीमान / श्रीमती जया अर्याल / रमेश अर्याल", "श्रीमान / श्रीमती प्रमिला पौडेल / गोविन्दप्रसाद पौडेल", "श्रीमान / श्रीमती राधा पौडेल / रामकृष्ण पौडेल", "श्रीमान / श्रीमती शर्मिला शर्मा / सन्तोष शर्मा", "श्रीमान / श्रीमती सबिना आचार्य / राजन आचार्य", "श्रीमान / श्रीमती सुस्मिता अर्याल / जगदीश अर्याल"] },
-        { label: "दाइ / भाउजू / भाइहरू", names: ["श्रीमान / श्रीमती नेत्र सुबेदी / अम्बिका सुबेदी", "श्रीमान / श्रीमती दिनेश सुबेदी / पूजा सुबेदी", "राजन सुबेदी", "मुक्ति सुबेदी", "राजीव सुबेदी", "सुदीप सुबेदी", "मिलन सुबेदी"] },
-        { label: "भतिज / भतिजी", names: ["अंकित सुबेदी", "अमन सुबेदी", "प्रसिद्ध सुबेदी", "प्रसिद्धि सुबेदी"] },
-        { label: "मावली तर्फ", decoratedLabel: true, names: ["विष्णुमती उपाध्यायनी · हजुरआमा", "श्रीमान / श्रीमती बालकृष्ण पौडेल / देवी पौडेल ( मामा / माइजू )"] }
-      ],
-    };
-
-    function getParentsLines(data) {
-      if (Array.isArray(data.parentsLines) && data.parentsLines.length) return data.parentsLines;
-      if (data.parents) return [data.parents];
-      return [];
-    }
-
-    function groomFamilyNames(data) {
-      const lines = getParentsLines(data);
-      const names = lines.length ? [lines.join(' · ')] : [];
-      (data.sections || []).forEach((s) => names.push(...(s.names || []).filter(Boolean)));
-      return names;
-    }
-
-    function renderFamilyCaption(label, above) {
-      const cls = above ? ' family-caption-wrap--above' : '';
-      return '<div class="family-caption-wrap' + cls + '"><div class="family-caption-rule" aria-hidden="true"><span></span></div><div class="family-caption">' + escapeHtml(label) + '</div></div>';
-    }
-
-    function renderParentsBlock(lines) {
-      const lineClasses = ['family-name-line--emph', 'family-name-line--emph', 'family-name-line--emph', 'family-name-line--family', 'family-name-line--address'];
-      const inner = lines.map((l, i) => '<span class="family-name-line ' + (lineClasses[i] || '') + '">' + escapeHtml(l) + '</span>').join('');
-      return '<div class="family-lead-panel"><div class="family-name-multiline">' + inner + '</div></div>';
-    }
-
-    function renderGroomFamily(data) {
-      groomFamilyData = data;
-      $('groomFamilyTitle').textContent = data.title || 'वर पक्ष · Groom family list';
-      const names = groomFamilyNames(data);
-      $('groomFamilyCount').textContent = names.length + ' guests in groom family list';
-      let html = '';
-      const parentsLines = getParentsLines(data);
-      if (parentsLines.length) {
-        const dLabel = data.darshanabhilashiLabel || 'दर्शनाभिलाषि';
-        html += '<div class="family-section">' + renderParentsBlock(parentsLines) + renderFamilyCaption(dLabel) + '</div>';
-      }
-      html += (data.sections || [])
-        .filter((sec) => (sec.names || []).length)
-        .map((sec) => {
-          const items = sec.names.map((n) => '<li>' + escapeHtml(n) + '</li>').join('');
-          const caption = sec.caption ? renderFamilyCaption(sec.caption, true) : '';
-          const labelHtml = sec.decoratedLabel
-            ? renderFamilyCaption(sec.label, true)
-            : '<div class="family-section-label">' + escapeHtml(sec.label) + '</div>';
-          return '<div class="family-section">' + caption + labelHtml + '<ul class="family-names">' + items + '</ul></div>';
-        }).join('');
-      $('groomFamilySections').innerHTML = html;
-    }
-
-    async function loadGroomFamilyFile() {
-      try {
-        const res = await fetch('./groom-family.json');
-        if (res.ok) renderGroomFamily(await res.json());
-        else renderGroomFamily(GROOM_FAMILY_FALLBACK);
-      } catch (_) {
-        renderGroomFamily(GROOM_FAMILY_FALLBACK);
-      }
-    }
-
-    $('loadGroomFamily').onclick = () => {
-      if (!groomFamilyData) { $('groomFamilyMsg').textContent = 'Family list not loaded yet.'; return; }
-      const names = groomFamilyNames(groomFamilyData);
-      if (!names.length) { $('groomFamilyMsg').textContent = 'No names in groom family list.'; return; }
-      $('nameList').value = names.join('\n');
-      $('groomFamilyMsg').textContent = 'Loaded ' + names.length + ' names into bulk — click Generate all links.';
-      $('nameList').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    };
-
-    $('generateGroomFamily').onclick = () => {
-      if (!groomFamilyData) return;
-      const names = groomFamilyNames(groomFamilyData);
-      if (!names.length) { $('groomFamilyMsg').textContent = 'No names in groom family list.'; return; }
-      $('nameList').value = names.join('\n');
-      const data = runBulk();
-      if (!data) return;
-      renderBulkResults(data);
-      $('groomFamilyMsg').textContent = 'Generated ' + data.rows.length + ' groom family links.';
-      bulkResults.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    };
-
-    loadGroomFamilyFile();
 
     function defaultBaseUrl() {
       const dir = location.pathname.replace(/[^/]*$/, '');
@@ -427,42 +216,6 @@
       });
       return { rows, guestMap };
     }
-
-    function linkForName(name, useToken) {
-      const { rows } = buildBulkRows([name.trim()], useToken);
-      return rows[0];
-    }
-
-    function showLink(url) {
-      linkOut.innerHTML = '<a href="' + url + '" target="_blank" rel="noopener">' + url + '</a>';
-      linkOut.dataset.url = url;
-    }
-
-
-    $('makeLink').onclick = () => {
-      const name = nameInput.value.trim();
-      if (!name) { msg.textContent = 'Please enter a guest name.'; return; }
-      const { url } = linkForName(name, false);
-      showLink(url);
-      msg.textContent = 'Ready — copy or preview.';
-    };
-
-    $('copyLink').onclick = async () => {
-      const url = linkOut.dataset.url;
-      if (!url) { msg.textContent = 'Generate a link first.'; return; }
-      try {
-        await navigator.clipboard.writeText(url);
-        msg.textContent = 'Copied to clipboard.';
-      } catch (_) {
-        msg.textContent = 'Copy failed — select the link manually.';
-      }
-    };
-
-    $('previewLink').onclick = () => {
-      const url = linkOut.dataset.url;
-      if (!url) { msg.textContent = 'Generate a link first.'; return; }
-      window.open(url, '_blank');
-    };
 
     function runBulk() {
       const names = parseNames($('nameList').value);
