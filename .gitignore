@@ -2,3 +2,4 @@ uploads/
 .image-slots.state.json
 .thumbnail
 .DS_Store
+.netlify/

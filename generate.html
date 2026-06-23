@@ -237,10 +237,14 @@
 
     function rowsAsWhatsApp(rows) {
       return rows.map((r) =>
-        'नमस्ते ' + r.name + ',\n' +
-        'Aseem & Anjali को विवाह निमन्त्रणा:\n' +
+        '🙏 नमस्ते ' + r.name + ' ज्यू,\n\n' +
+        'आसिम र अञ्जलीको शुभ विवाहमा हार्दिक निमन्त्रणा छ।\n\n' +
+        '॥ शुभ विवाह ॥\n' +
+        '१३ असार २०८३ · २७ जुन २०२६\n' +
+        'कुश्मा, पर्वत\n\n' +
+        'निमन्त्रणा हेर्नुहोस् 👇\n' +
         r.url
-      ).join('\n\n---\n\n');
+      ).join('\n\n━━━━━━━━━━━━\n\n');
     }
 
     function renderBulkResults(data) {
