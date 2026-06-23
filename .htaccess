@@ -1,0 +1,12 @@
+# Social share crawlers (WhatsApp, Facebook, iMessage) need direct image access
+<IfModule mod_mime.c>
+  AddType image/jpeg .jpg .jpeg
+  AddType image/png .png
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "og-image\.(jpg|jpeg|png)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
